@@ -1,7 +1,7 @@
 
 from telethon import TelegramClient as tc, events
 from Examples import *
-
+from datetime import datetime
 
 
 test = 1570183346
@@ -14,11 +14,12 @@ client.start(phone='79035886781',password='newnew')
 @client.on(event=events.NewMessage())
 async def answer(e):
     try:
+        await client.get_dialogs()
         id = e.message.id
         command = e.message.message
         to_id = await client.get_entity(e.message.peer_id.user_id)
         from_id = await client.get_entity(e.message.from_id.user_id)
-
+        print(from_id, datetime.today)
         pos = await client.get_messages(from_id, limit=1)
         pos = pos.total-1
 
