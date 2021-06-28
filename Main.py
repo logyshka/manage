@@ -3,8 +3,8 @@ from telethon import TelegramClient as tc, events
 from Examples import *
 
 
-test = 858692387
-manager_id = 1570183346
+
+test = 1570183346
 api_hash = 'd7d8741f123a7c0ab2394870464c1794'
 api_id = 3878059
 
