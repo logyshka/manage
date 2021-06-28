@@ -16,8 +16,8 @@ async def answer(e):
     try:
         id = e.message.id
         command = e.message.message
-        to_id = e.message.peer_id.user_id
-        from_id = e.message.from_id.user_id
+        to_id = await client.get_entity(e.message.peer_id.user_id)
+        from_id = await client.get_entity(e.message.from_id.user_id)
 
         pos = await client.get_messages(from_id, limit=1)
         pos = pos.total-1
